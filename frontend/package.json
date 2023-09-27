@@ -1,7 +1,7 @@
 {
   "name": "youtube-shop",
   "version": "0.1.0",
-  "proxy": "http://localhost:4000",
+  "proxy": "http://deploy-mern-ruby.vercel.app",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.15.0",
