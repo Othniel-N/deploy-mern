@@ -9,7 +9,7 @@ import { errorHandler, notFound } from './Middleware/Error.js';
 dotenv.config();
 connectDatabase();
 const app = express();
-
+const cors = require('cors');
 
 // Set the expected host header
 app.use((req, res, next) => {
@@ -22,6 +22,7 @@ app.use("/api/import", ImportData);
 app.use("/api/products", productRoute);
 app.use(notFound);
 app.use(errorHandler);
+app.use(cors());
 
 //below get call is to test whether is running or not
 
