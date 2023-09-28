@@ -1,6 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import connectDatabase from './config/MongoDB.js';
+import cors from "cors";
 import ImportData from './DataImport.js';
 import productRoute from './Routes/ProductRoutes.js';
 import { errorHandler, notFound } from './Middleware/Error.js';
@@ -9,20 +10,19 @@ import { errorHandler, notFound } from './Middleware/Error.js';
 dotenv.config();
 connectDatabase();
 const app = express();
-const cors = require('cors');
 
 // Set the expected host header
 app.use((req, res, next) => {
   req.headers.host = 'https://netlify-kohl.vercel.app'; // Replace with your ngrok domain
   next();
 });
-
+app.use(cors());
 //API
 app.use("/api/import", ImportData);
 app.use("/api/products", productRoute);
 app.use(notFound);
 app.use(errorHandler);
-app.use(cors());
+
 
 //below get call is to test whether is running or not
 
