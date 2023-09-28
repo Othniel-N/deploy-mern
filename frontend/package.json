@@ -1,7 +1,7 @@
 {
   "name": "youtube-shop",
   "version": "0.1.0",
-  "proxy": "https://backend-wqzj.onrender.com",
+  "proxy": "https://backend-6zbw.onrender.com",
   "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^5.15.0",
