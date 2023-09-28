@@ -10,6 +10,13 @@ dotenv.config();
 connectDatabase();
 const app = express();
 
+
+// Set the expected host header
+app.use((req, res, next) => {
+  req.headers.host = 'https://frontend-17ca.onrender.com'; // Replace with your ngrok domain
+  next();
+});
+
 //API
 app.use("/api/import", ImportData);
 app.use("/api/products", productRoute);
