@@ -13,7 +13,7 @@ const app = express();
 
 // Set the expected host header
 app.use((req, res, next) => {
-  req.headers.host = 'https://frontend-17ca.onrender.com'; // Replace with your ngrok domain
+  req.headers.host = 'https://netlify-kohl.vercel.app'; // Replace with your ngrok domain
   next();
 });
 
